@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 
 const connection = require('./db/connection');
+const scrapeExchangeRate = require('./jobs/scrapeExchangeRate');
 
 const exchange = require('./routes/exchange');
 
@@ -10,10 +11,12 @@ app.use(express.json());
 
 app.use('/api/v1/exchange-rate', exchange);
 
-const port = 4000
+const port = process.env.PORT || 4000;
 
 const crawl = async ({url}) => {
     console.log("website url", url);
+    await scrapeExchangeRate(url);
+    console.log('Crawl complete')
 }
 
 const start = async () => {
