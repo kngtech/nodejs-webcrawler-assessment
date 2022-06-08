@@ -18,6 +18,14 @@ In this assessment, you will create a web crawler to collect the day's interbank
 
 - Create and submit a PR for your solution
 
+## Instructions to use exchange rate converter API
+GET ```api/v1/exchange-rate```
+Query params: 
+- ```from```
+- ```amount```
+Send a GET request to the endpoint ```api/v1/exchange-rate```. Pass the currency in the query param ```from``` and the amount in the query param ```amount```
+Eg. ```api/v1/exchange-rate?from=usd&amount=123```
+
 Happy Coding :D
 
 ![Code](https://media.tenor.com/images/8460465dd4597849c320adfe461e91e3/tenor.gif)
